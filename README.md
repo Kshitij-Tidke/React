@@ -33,5 +33,10 @@ Additional Addon to React:
   - Class based component ** leave this company
   - BAAS(Backend as a Service) Apps: AppWrite, Firebase, Superbase
       -> Social media clone
-      -> E-commerce App  
+      -> E-commerce App
+
+React is not a complete solution in most cases
+          -> No SEO
+          -> Browser render of JS
+          -> No routing  
 ```
