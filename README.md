@@ -39,4 +39,72 @@ React is not a complete solution in most cases
           -> No SEO
           -> Browser render of JS
           -> No routing  
+
+
+Context API:
+context: Multiple Context 
+  - UserContext
+  - OrderContext
+
+Creating a Context
+context folder  --> UserContext.js
+const UserContext  = createContext()
+export 
+
+Creating Provinder
+import UserContext 
+const UserContextProvider = ({children}) => {  // Children: Jo bhi aapke pass aaraha hai vo vese ke vese aage pass kar do
+  const [user, setUser] = useState(null)
+  return (
+    <UserContext.Proider value = {{user, setUser}}>
+    {children}
+    <UserContext.Provider/>
+  )
+
+}
+export
+
+Send data
+const {setUser} = useContext(UserContext)
+setUser({username, password})
+
+Get data
+const {user} = useContext(UserContext)
+
+
+Rap using Provider
+<UserContext>
+<Login/>
+<Card>
+  <Data/>
+</Card>
+<UserContext>
 ```
+```
+Context API second Version (Theme Provider)
+theme.js
+import createContext, useContext 
+export const ThemeContext = createContext({
+  themeMode = "light",  // we pass variable and functions also
+  darkTheme: () => {},  // Functionality not Defined
+  lightThemse: () => {}
+})
+
+// Provider
+export const ThemeProvider = ThemeContext.Provider
+
+// Custom Hook
+export default function useTheme(){
+  return  useContext(ThemeContext)
+}
+
+//write Functionality here it automatically but name same chaiye
+<ThemeProvider  value=({themeMode, darkTheme, lightTheme})>
+
+use Custom hooks
+const {themeMode, darKTheme, lightTheme} = useTheme()
+
+
+</ThemeProvider>
+```
+
