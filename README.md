@@ -106,5 +106,11 @@ const {themeMode, darKTheme, lightTheme} = useTheme()
 
 
 </ThemeProvider>
+
+
+forward ref
+you have one login form and have multiple input fiellds
+but you create one componet that use in multiple locations
+like register login i mean component is another place and use in another place that why forward ref use to give reference
 ```
 
